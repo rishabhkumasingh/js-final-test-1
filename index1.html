@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body{
+            background-color: antiquewhite;
+            
+        }
+        button{
+            border: none;
+            background-color: blue;
+            color: white;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>FIXED AMOUNT: <span id="result">0</span></div>
+
+    <input type="text" id="input1">
+    <button onclick="newvalue()">SUBMIT FIXED AMOUNT</button><br>
+
+
+    <div id="addvalue">Penalty value:0</div>
+    <button onclick="addpenaltyvalue()">Add penalty</button>
+
+
+    <ul id="empty">
+
+    </ul>
+</body>
+
+
+<script>
+
+    var curentValue = 0;
+    
+
+
+    const newvalue =()=> {
+        var newpenaltyvalue = Number(document.getElementById("input1").value)
+        document.getElementById("result").innerText = newpenaltyvalue;
+        curentValue = newpenaltyvalue;
+        document.getElementById("input1").value = ""
+    }
+
+    const addpenaltyvalue = () => {
+        let era = document.getElementById("result").innerText
+        document.getElementById("addvalue").innerText = era
+        
+        let li = document.createElement("li");
+        li.innerHTML = document.getElementById("addvalue").innerText;
+        document.getElementById("empty").appendChild(li)
+
+        
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>
